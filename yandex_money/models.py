@@ -83,8 +83,12 @@ class Payment(models.Model):
         )
 
     user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, blank=True, null=True,
-        verbose_name='Пользователь')
+        settings.AUTH_USER_MODEL,
+        blank=True, null=True,
+        verbose_name='Пользователь',
+        related_name='yandex_payments',
+        on_delete=models.SET_NULL,
+    )
     pub_date = models.DateTimeField('Время создания', auto_now_add=True)
 
     # Required request fields
