@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
                 ('order_currency', models.PositiveIntegerField(default=643, verbose_name='\u0412\u0430\u043b\u044e\u0442\u0430', choices=[(643, '\u0420\u0443\u0431\u043b\u0438'), (10643, '\u0422\u0435\u0441\u0442\u043e\u0432\u0430\u044f \u0432\u0430\u043b\u044e\u0442\u0430')])),
                 ('shop_currency', models.PositiveIntegerField(default=643, null=True, verbose_name='\u0412\u0430\u043b\u044e\u0442\u0430 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u043d\u0430\u044f \u043d\u0430 \u0440/\u0441', blank=True, choices=[(643, '\u0420\u0443\u0431\u043b\u0438'), (10643, '\u0422\u0435\u0441\u0442\u043e\u0432\u0430\u044f \u0432\u0430\u043b\u044e\u0442\u0430')])),
                 ('performed_datetime', models.DateTimeField(null=True, verbose_name='\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435 \u0437\u0430\u043f\u0440\u043e\u0441\u0430', blank=True)),
-                ('user', models.ForeignKey(verbose_name='\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c', blank=True, to=settings.AUTH_USER_MODEL, null=True)),
+                ('user', models.ForeignKey(verbose_name='\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c', blank=True, to=settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)),
             ],
             options={
                 'ordering': ('-pub_date',),
